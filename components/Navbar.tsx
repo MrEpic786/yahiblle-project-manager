@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { NavLinks } from '@/constants';
+import AuthProviders from './AuthProviders';
 
 const Navbar = () => {
+  const session = null;
+
   return (
     <nav className="navbar flexBetween">
       <div className="flex-1 flexStart gap-10">
@@ -17,7 +20,16 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="flexCenter gap-4"></div>
+      <div className="flexCenter gap-4">
+        {session ? (
+          <>
+            UserPhoto
+            <Link href="/create-project">Share Work</Link>
+          </>
+        ) : (
+          <AuthProviders />
+        )}
+      </div>
     </nav>
   );
 };
