@@ -33,7 +33,7 @@ const AuthProviders = () => {
             key={provider.id + index}
             onClick={() => signIn(provider?.id)}
           >
-            {provider.id}
+            Sign in with {provider.id}
           </button>
         ))}
       </div>
